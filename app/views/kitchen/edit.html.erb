@@ -1,0 +1,6 @@
+<h1>リンクの編集</h1>
+<%= form_tag kitchen_update_path(@kitchen.id), method: 'patch' do %>
+<%= text_field_tag :name,@kitchen.name %>
+<%= text_field_tag :link,@kitchen.link %>
+<%= submit_tag '完了' %>
+<% end %>

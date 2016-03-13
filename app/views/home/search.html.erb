@@ -1,0 +1,16 @@
+<%= form_tag search_path do %>
+    <%= text_field_tag :keyword %>
+    <%= submit_tag "検索", class: "btn primary-btn" %>
+<% end %>
+<br>
+<% @title.each do |title| %>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2"><img src="<%= @images[title] %>"></div>
+            <div class="col-sm-5">
+                <li><%= link_to title, @links[title], target: "_blank" %></li>
+                <%= @ingredients[@title.index(title)] %>
+            </div>
+        </div>
+    </div><br>
+<% end %>

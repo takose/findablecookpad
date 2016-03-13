@@ -1,0 +1,20 @@
+
+<h1>キッチンを追加</h1>
+<%= form_tag kitchen_path do %>
+ユーザ名
+<input type="text" name="name">
+ユーザID
+<input type="text" name="link">
+<input type="submit" values="追加">
+<% end %>
+<% if @kitchen.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= @kitchen.errors.count %>件のエラーが発生しました。</h3>
+
+      <ul>
+      <% @kitchen.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>

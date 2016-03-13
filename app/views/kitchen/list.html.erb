@@ -1,0 +1,13 @@
+<div>
+<h1>キッチン一覧</h1>
+<li style="text-align:right;">
+    <%= link_to "追加", kitchen_new_path ,{class: "btn btn-info", :style => "text-align:right;"} %>
+</li>
+</div>
+<% @kitchens.each do |kitchen| %>
+<li>
+    <%= link_to kitchen.name, kitchen.link %>
+    <%= link_to "編集", kitchen_edit_path(kitchen.id), class: "btn btn-success", role: "button" %>
+    <%= link_to "削除", kitchen_delete_path(kitchen.id), class: "btn btn-danger", role: "button" %>
+</li><br>
+<% end %>
