@@ -22,5 +22,7 @@ test:
 
 production:
   <<: *default
-  adapter: pg
-  database: db/production.pg
+  adapter: postgresql
+  host: ec2-54-83-57-25.compute-1.amazonaws.com
+  username: dvdrgaofesakdf
+  database: d3p91brnnqg6lh
