@@ -1,7 +1,7 @@
 class KitchenController < ApplicationController
   def new
     #これあとでなんとかする
-    @kitchen=Kitchen.last
+    @kitchen=Kitchen.new
   end
   
   def create
