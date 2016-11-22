@@ -1,14 +1,11 @@
+require 'open-uri'
+require 'nokogiri'
+require 'net/http'
+require 'uri'
 class HomeController < ApplicationController
   def top
   end
   def search
-    # URLにアクセスするためのライブラリの読み込み
-    require 'open-uri'
-    # Nokogiriライブラリの読み込み
-    require 'nokogiri'
-    
-    require 'net/http'
-    require 'uri'
     @title=Array.new
     @links=Hash.new
     @images=Hash.new
@@ -17,8 +14,8 @@ class HomeController < ApplicationController
     # スクレイピング先のURL
     if params[:keyword]
       kitchens.each do |kitchen|
-        #url = 'http://cookpad.com/recipe/list/47282?keyword='
-        url = kitchen.link + '?keyword='
+        url = 'http://cookpad.com/recipe/list/47282?keyword='
+        #url = kitchen.link + '?keyword='
         keyword = CGI.escape(params[:keyword])
         url += keyword
         charset = nil

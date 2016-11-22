@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-sm-2"><img src="<%= @images[title] %>"></div>
             <div class="col-sm-5">
-                <li><%= link_to title, @links[title], target: "_blank" %></li>
+              <li><a href="http://cookpad.com/recipe/<%=@links[title]%>"><%= title %></a></li>
                 <%= @ingredients[@title.index(title)] %>
             </div>
         </div>
